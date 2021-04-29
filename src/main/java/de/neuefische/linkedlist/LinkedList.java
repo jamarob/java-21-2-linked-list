@@ -1,5 +1,7 @@
 package de.neuefische.linkedlist;
 
+import java.util.Objects;
+
 public class LinkedList {
 
     private ListItem head;
@@ -14,6 +16,29 @@ public class LinkedList {
 
     private ListItem getTail(ListItem item){
         return item.getNext() == null ? item : getTail(item.getNext());
+    }
+
+
+    public void remove(Animal animal){
+        while(head != null && head.getValue().equals(animal)){
+            head = head.getNext();
+        }
+
+        if(head == null){
+            return;
+        }
+
+        ListItem item = head;
+
+        while(item.getNext() != null){
+
+            if(Objects.equals(item.getNext().getValue(), animal)){
+                item.setNext(item.getNext().getNext());
+            }else{
+                item = item.getNext();
+            }
+
+        }
     }
 
     @Override
