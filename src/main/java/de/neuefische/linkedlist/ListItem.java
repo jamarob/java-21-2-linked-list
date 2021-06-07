@@ -1,27 +1,27 @@
 package de.neuefische.linkedlist;
 
-public class ListItem {
+public class ListItem<T> {
 
-    private Animal value;
-    private ListItem next;
+    private T value;
+    private ListItem<T> next;
 
-    public ListItem(Animal value) {
+    public ListItem(T value) {
         this.value = value;
     }
 
-    public Animal getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(Animal value) {
+    public void setValue(T value) {
         this.value = value;
     }
 
-    public ListItem getNext() {
+    public ListItem<T> getNext() {
         return next;
     }
 
-    public void setNext(ListItem next) {
+    public void setNext(ListItem<T> next) {
         this.next = next;
     }
 }

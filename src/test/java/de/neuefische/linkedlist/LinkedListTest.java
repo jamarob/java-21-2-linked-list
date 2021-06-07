@@ -11,7 +11,7 @@ class LinkedListTest {
     @Test
     public void testToStringOfEmptyList(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
 
         // When
         String actual = list.toString();
@@ -21,9 +21,9 @@ class LinkedListTest {
     }
 
     @Test
-    public void testAdd(){
+    public void testAddAnimal(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
         list.add(new Animal("Capybara"));
         list.add(new Animal("Squirrel"));
         list.add(new Animal("Dog"));
@@ -37,9 +37,25 @@ class LinkedListTest {
     }
 
     @Test
+    public void testAddAircraft(){
+        // Given
+        LinkedList<Aircraft> list = new LinkedList<>();
+        list.add(new Aircraft("A350"));
+        list.add(new Aircraft("B737"));
+        list.add(new Aircraft("A380"));
+
+        // When
+        String actual = list.toString();
+
+        // Then
+        String expected = "A350 -> B737 -> A380";
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void testAddOnlyOneItem(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
         list.add(new Animal("Dog"));
 
         // When
@@ -52,7 +68,7 @@ class LinkedListTest {
     @Test
     public void testRemove(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
         list.add(new Animal("Capybara"));
         list.add(new Animal("Squirrel"));
         list.add(new Animal("Squirrel"));
@@ -72,7 +88,7 @@ class LinkedListTest {
     @Test
     public void removeOnEmptyList(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
 
         // When
         list.remove(new Animal("Squirrel"));
@@ -85,7 +101,7 @@ class LinkedListTest {
     @Test
     public void removeCompleteList(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
         list.add(new Animal("Squirrel"));
         list.add(new Animal("Squirrel"));
         list.add(new Animal("Squirrel"));
@@ -103,7 +119,7 @@ class LinkedListTest {
     @Test
     public void testRemoveWhenElementNotFound(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
         list.add(new Animal("Capybara"));
         list.add(new Animal("Squirrel"));
         list.add(new Animal("Dog"));
@@ -121,7 +137,7 @@ class LinkedListTest {
     @Test
     public void testRemoveFirstElements(){
         // Given
-        LinkedList list = new LinkedList();
+        LinkedList<Animal> list = new LinkedList<>();
         list.add(new Animal("Capybara"));
         list.add(new Animal("Capybara"));
         list.add(new Animal("Squirrel"));
